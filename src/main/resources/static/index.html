@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <h1>Викторина</h1>
+    <p>Сайт для составления вопросов и проверки знаний.</p>
+    <ul>
+      <li><a href="manage.html">Вопросы</a> — добавление, изменение и удаление вопросов</li>
+      <li><a href="quiz.html">Викторина</a> — ответы на случайные вопросы</li>
+      <li><a href="contacts.html">Контакты</a> — как с нами связаться</li>
+    </ul>
+    <p id="stats"></p>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script>
+    api('/api/questions').then(d => {
+      document.getElementById('stats').textContent = `Вопросов в базе: ${d.count} из ${d.limit}.`;
+    }).catch(() => {});
+  </script>
+</body>
+</html>

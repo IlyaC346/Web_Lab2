@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вопросы</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <h1>Вопросы</h1>
+
+    <h2 id="formTitle">Новый вопрос</h2>
+    <form id="qForm" novalidate>
+      <input type="hidden" id="qId">
+      <label for="qText">Вопрос</label>
+      <textarea id="qText" maxlength="300"></textarea>
+      <label for="qAnswer">Ответ</label>
+      <input id="qAnswer" maxlength="100">
+      <label for="qCategory">Категория</label>
+      <input id="qCategory" maxlength="40" list="categoryList">
+      <datalist id="categoryList"></datalist>
+      <div>
+        <button type="submit" id="saveBtn">Добавить</button>
+        <button type="button" id="cancelBtn" class="hidden">Отмена</button>
+      </div>
+      <div class="message" id="msg"></div>
+    </form>
+
+    <h2>Список</h2>
+    <p id="storageText"></p>
+    <label for="search">Поиск</label>
+    <input id="search" type="search">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Вопрос</th>
+            <th>Ответ</th>
+            <th>Категория</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/manage.js"></script>
+</body>
+</html>

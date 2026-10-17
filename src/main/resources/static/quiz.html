@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Викторина</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <h1>Викторина</h1>
+
+    <div id="setup">
+      <label for="count">Количество вопросов</label>
+      <input id="count" type="number" min="1" max="50" value="5">
+      <div><button id="startBtn">Начать</button></div>
+      <p id="available"></p>
+    </div>
+
+    <div id="play" class="hidden">
+      <p id="counterText"></p>
+      <p><b id="qText"></b></p>
+      <form id="answerForm" autocomplete="off">
+        <label for="answer">Ваш ответ</label>
+        <input id="answer">
+        <div>
+          <button type="submit" id="checkBtn">Проверить</button>
+          <button type="button" id="nextBtn" class="hidden">Следующий вопрос</button>
+          <button type="button" id="stopBtn">Закончить</button>
+        </div>
+      </form>
+      <div class="message" id="feedback"></div>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2>Результат</h2>
+      <p id="resultText"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Вопрос</th><th>Ваш ответ</th><th>Правильный ответ</th></tr>
+          </thead>
+          <tbody id="resultBody"></tbody>
+        </table>
+      </div>
+      <button id="againBtn">Пройти ещё раз</button>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
